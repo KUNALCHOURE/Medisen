@@ -100,7 +100,7 @@ def get_doctors_for_disease(disease):
         specialty = get_specialty_for_disease(disease)
         print(f"Specialty for disease '{disease}': {specialty}")
         if not specialty:
-            return []  # If no specialty is found, return an empty list
+            return [] 
         
         # Clean the specialty field in both the dataset and input
         df_doctors["Specialty"] = df_doctors["Specialty"].str.strip().str.lower()
@@ -193,5 +193,5 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
-    
+    app.run(host="0.0.0.0", port=10000)  # Change the port if needed
+
